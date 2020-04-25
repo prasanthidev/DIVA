@@ -17,6 +17,7 @@ urlpatterns = [
     path('110m.tsv',views.countryIdsNames),
     path('choropleth2.js',views.choroplethNew),
     path('getMaleData',views.getMaleData),
-    path('pyramidChart.js',views.pyramidChart)
+    path('pyramidChart.js',views.pyramidChart),
+    path('child-mortality',views.showMortalityData)
 ]
 

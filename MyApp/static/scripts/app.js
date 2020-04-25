@@ -29,21 +29,7 @@ let glineX = d3.select("#searchLineX")
 let glineY = d3.select("#searchLineY")
     .attr("transform", "translate(0,-10)")
 
-$.ajax(
-    {
-        url:"/showWorldData",
-        success: function(result)
-        {
-            data = JSON.parse(result).wp;
-            wp = data['populationList'];
-            console.log(wp);
-            clickLineChart();
-            initializeSliders();
-        }
-    });
 
-getChoroplethData();
-drawMaleBarChart();
     
 function clickLineChart()
 {
@@ -288,4 +274,22 @@ function removeCountry(countryName) // removes country from selected list
         }
     }
     console.log(selectedCountryNamesList)
+}
+
+function initializeWorldPopulation() {
+    $.ajax(
+    {
+        url:"/showWorldData",
+        success: function(result)
+        {
+            data = JSON.parse(result).wp;
+            wp = data['populationList'];
+            console.log(wp);
+            clickLineChart();
+            initializeSliders();
+        }
+    });
+
+    getChoroplethData();
+    drawMaleBarChart();
 }

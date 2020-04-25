@@ -4,9 +4,12 @@ from MyApp import MaleFemalePyramid as mfp
 import json
 
 # Create your views here.
+def showMortalityData(request):
+    return render(request, 'Mortality.html')
 
 def home(request):
-    return render(request,'mywebsiteNew2.html')
+    return render(request, 'Mortality.html')
+    #return render(request,'mywebsiteNew2.html')
 
 def showWorldData(request):
     context = {

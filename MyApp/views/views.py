@@ -6,6 +6,9 @@ from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
+def showMortalityData(request):
+    return render(request,'Mortality.html')
+
 def home(request):
     return render(request,'home.html')
 
